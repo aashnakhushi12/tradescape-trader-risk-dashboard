@@ -1,0 +1,44 @@
+.trade-section {
+  margin-top: 40px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.trade-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.trade-table th {
+  background: #334155;
+  padding: 16px;
+  text-align: left;
+}
+
+.trade-table td {
+  padding: 16px;
+  border-bottom: 1px solid #334155;
+}
+
+.trade-table tr:last-child td {
+  border-bottom: none;
+}
+
+.trade-table tbody tr:hover {
+  background: #293548;
+}
+
+.profit-text {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.loss-text {
+  color: #ef4444;
+  font-weight: bold;
+}

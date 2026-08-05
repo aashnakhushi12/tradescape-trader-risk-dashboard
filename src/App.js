@@ -3,6 +3,7 @@ import "./styles/dashboard.css";
 import Header from "./components/Header";
 import AccountCard from "./components/AccountCard";
 import PerformanceCard from "./components/PerformanceCard";
+import TradeTable from "./components/TradeTable";
 
 import {
   startingBalance,
@@ -55,6 +56,8 @@ function App() {
         largestWinningTrade={largestWinningTrade}
         largestLosingTrade={largestLosingTrade}
       />
+
+      <TradeTable trades={trades} />
     </div>
   );
 }

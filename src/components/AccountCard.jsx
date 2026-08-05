@@ -1,5 +1,6 @@
 import "./AccountCard.css";
 import StatCard from "./StatCard";
+import { formatCurrency } from "../utils/formatters";
 
 function AccountCard({
   startingBalance,
@@ -7,10 +8,6 @@ function AccountCard({
   maximumDrawdown,
   dailyLossLimit,
 }) {
-  const formatCurrency = (amount) => {
-    return `$${amount.toLocaleString()}`;
-  };
-
   return (
     <section className="account-section">
       <h2 className="section-title">Account Overview</h2>

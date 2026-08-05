@@ -1,22 +1,32 @@
 .stat-card {
   background: #1e293b;
+  border: 1px solid #334155;
   border-radius: 12px;
   padding: 20px;
-  transition: 0.3s;
-  border: 1px solid #334155;
+  transition: all 0.3s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  border-color: #3b82f6;
 }
 
 .stat-title {
   color: #94a3b8;
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .stat-value {
-  margin-top: 12px;
   font-size: 28px;
   font-weight: bold;
+  color: white;
+}
+
+.stat-value.profit {
+  color: #22c55e;
+}
+
+.stat-value.loss {
+  color: #ef4444;
 }

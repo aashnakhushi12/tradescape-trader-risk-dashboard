@@ -1,5 +1,9 @@
 import "./PerformanceCard.css";
 import StatCard from "./StatCard";
+import {
+  formatCurrency,
+  formatPercentage,
+} from "../utils/formatters";
 
 function PerformanceCard({
   totalPnL,
@@ -9,8 +13,6 @@ function PerformanceCard({
   largestWinningTrade,
   largestLosingTrade,
 }) {
-  const formatCurrency = (amount) => `$${amount.toLocaleString()}`;
-
   return (
     <section className="performance-section">
       <h2 className="section-title">Trading Performance</h2>
@@ -19,6 +21,7 @@ function PerformanceCard({
         <StatCard
           title="Total P&L"
           value={formatCurrency(totalPnL)}
+          type={totalPnL >= 0 ? "profit" : "loss"}
         />
 
         <StatCard
@@ -33,17 +36,19 @@ function PerformanceCard({
 
         <StatCard
           title="Win Rate"
-          value={`${winRate}%`}
+          value={formatPercentage(winRate)}
         />
 
         <StatCard
           title="Largest Winning Trade"
           value={formatCurrency(largestWinningTrade)}
+          type="profit"
         />
 
         <StatCard
           title="Largest Losing Trade"
           value={formatCurrency(largestLosingTrade)}
+          type="loss"
         />
       </div>
     </section>
