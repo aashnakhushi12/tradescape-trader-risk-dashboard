@@ -1,70 +1,231 @@
-# Getting Started with Create React App
+# Trader Risk Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React application built as part of the **Tradescape Full Stack Developer Assignment**.
 
-## Available Scripts
+The dashboard helps traders monitor their trading performance, understand their account risk, and quickly identify whether they are approaching any account rule violations.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔗 https://tradescape-trader-risk-dashboard-psi.vercel.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 💻 GitHub Repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🔗 https://github.com/aashnakhushi12/tradescape-trader-risk-dashboard
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Project Overview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This dashboard was developed to help traders easily understand both their trading performance and their current risk status.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Instead of displaying only the account balance and profit/loss, the application calculates important trading metrics from the provided trade data and presents them in a clean, easy-to-understand interface.
 
-### `npm run eject`
+All calculations are generated dynamically rather than being hardcoded.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Account Overview
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Starting Balance
+- Current Balance
+- Maximum Drawdown
+- Daily Loss Limit
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Trading Performance
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The dashboard automatically calculates:
 
-### Code Splitting
+- Total P&L
+- Winning Trades
+- Losing Trades
+- Win Rate
+- Largest Winning Trade
+- Largest Losing Trade
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+All values are derived from the supplied trade data.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Risk Indicator
 
-### Making a Progressive Web App
+The dashboard clearly shows whether the trader is currently:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ✅ Safe
+- ⚠️ Approaching Limit
+- 🔴 At Risk
 
-### Advanced Configuration
+Risk calculations include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Current Drawdown
+- Remaining Drawdown
+- Current Day Loss
+- Remaining Daily Loss Limit
 
-### Deployment
+Progress bars provide a quick visual indication of drawdown and daily loss usage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Equity Curve
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+An equity curve has been added to visualize how the account balance changes after every trade.
+
+This helps traders understand their performance throughout the trading session instead of only looking at the final balance.
+
+---
+
+## Performance by Asset (Additional Feature)
+
+I added a **Performance by Asset** section as an additional feature.
+
+It groups trades by asset and displays:
+
+- Number of trades
+- Total Profit/Loss for each asset
+
+### Why?
+
+A trader may perform well on one asset while consistently losing on another.
+
+This feature helps identify strengths and weaknesses across different markets and supports better trading decisions.
+
+---
+
+# Tech Stack
+
+- React
+- JavaScript (ES6)
+- CSS3
+- Recharts
+- React Icons
+
+---
+
+# Folder Structure
+
+```
+src
+│
+├── components
+│   ├── Header
+│   ├── SummaryCards
+│   ├── AccountCard
+│   ├── PerformanceCard
+│   ├── RiskIndicator
+│   ├── ProgressBar
+│   ├── EquityChart
+│   ├── TradeTable
+│   ├── PerformanceByAsset
+│   ├── Footer
+│   └── StatCard
+│
+├── data
+│   └── trades.js
+│
+├── utils
+│   ├── calculations.js
+│   └── formatters.js
+│
+├── styles
+│   └── dashboard.css
+│
+├── App.js
+└── index.js
+```
+
+---
+
+# Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/aashnakhushi12/tradescape-trader-risk-dashboard.git
+```
+
+Move into the project directory.
+
+```bash
+cd tradescape-trader-risk-dashboard
+```
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+Start the development server.
+
+```bash
+npm start
+```
+
+The application will be available at:
+
+```
+http://localhost:3000
+```
+
+---
+
+# Product Questions
+
+## 1. What is drawdown in trading?
+
+Drawdown is the reduction in a trading account's value from its highest balance to its current balance. It is one of the most important risk metrics because it shows how much capital has been lost before recovering.
+
+---
+
+## 2. Why would a trader care about remaining drawdown rather than just current P&L?
+
+Current P&L only tells a trader whether they are making or losing money.
+
+Remaining drawdown shows how much loss is still allowed before violating the account rules. Even if a trader is profitable overall, being close to the maximum drawdown limit means they need to manage risk more carefully.
+
+---
+
+## 3. If you had another day to work on this dashboard, what would you improve?
+
+Given more time, I would add:
+
+- Trade filtering by asset and date
+- Search functionality
+- Average winning vs losing trade analysis
+- Historical performance reports
+- CSV export
+- Dark/Light mode
+- Real-time market data integration
+- User authentication and backend API integration
+
+---
+
+# Edge Cases
+
+The application handles several basic edge cases:
+
+- No trades available
+- Win rate calculation when there are zero trades
+- All winning trades
+- All losing trades
+- Responsive layout for desktop, tablet, and mobile devices
+
+---
+
+# Author
+
+**Khushi Ashna**
+
+GitHub:
+https://github.com/aashnakhushi12
+
+---
+
+Thank you for reviewing my submission.
