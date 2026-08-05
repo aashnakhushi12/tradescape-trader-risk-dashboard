@@ -103,3 +103,51 @@ export const getCurrentDayLoss = (trades) => {
 export const getRemainingDailyLoss = (trades, dailyLossLimit) => {
   return dailyLossLimit - getCurrentDayLoss(trades);
 };
+
+// Drawdown usage percentage
+export const getDrawdownUsage = (startingBalance, trades, maximumDrawdown) => {
+  const currentDrawdown = getCurrentDrawdown(startingBalance, trades);
+
+  return Number(((currentDrawdown / maximumDrawdown) * 100).toFixed(2));
+};
+
+// Daily loss usage percentage
+export const getDailyLossUsage = (trades, dailyLossLimit) => {
+  const currentLoss = getCurrentDayLoss(trades);
+
+  return Number(((currentLoss / dailyLossLimit) * 100).toFixed(2));
+};
+
+// Overall risk status
+export const getRiskStatus = (drawdownUsage, dailyLossUsage) => {
+  const risk = Math.max(drawdownUsage, dailyLossUsage);
+
+  if (risk >= 80) return "At Risk";
+
+  if (risk >= 50) return "Approaching Limit";
+
+  return "Safe";
+};
+
+// Generate equity curve data
+export const getEquityCurveData = (startingBalance, trades) => {
+  let balance = startingBalance;
+
+  const equityData = [
+    {
+      trade: "Start",
+      balance,
+    },
+  ];
+
+  trades.forEach((trade, index) => {
+    balance += trade.pnl;
+
+    equityData.push({
+      trade: `Trade ${index + 1}`,
+      balance,
+    });
+  });
+
+  return equityData;
+};

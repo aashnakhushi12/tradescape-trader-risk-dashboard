@@ -1,16 +1,18 @@
 .account-section {
-  margin-top: 40px;
+  margin-top: 65px;
 }
 
 .section-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 28px;
 }
 
 .account-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 @media (max-width: 1000px) {

@@ -1,9 +1,91 @@
 .app {
-  max-width: 1300px;
+  max-width: 1450px;
   margin: 0 auto;
-  padding: 40px 25px;
+  padding: 50px 28px;
 }
 
-.section {
-  margin-top: 30px;
+.dashboard-section {
+  margin-top: 65px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: #94a3b8;
+  font-size: 17px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Grid Layout
+=========================== */
+
+.grid {
+  display: grid;
+  gap: 22px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 24px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #22c55e;
+}
+
+@media (max-width: 1200px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 20px;
+  }
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  .dashboard-section {
+    margin-top: 45px;
+  }
 }

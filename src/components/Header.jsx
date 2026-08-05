@@ -4,14 +4,30 @@ import { FaChartLine } from "react-icons/fa";
 function Header() {
   return (
     <header className="header">
+
+      <p className="welcome-text">
+        👋 Welcome Trader
+      </p>
+
       <div className="header-title">
-        <FaChartLine className="header-icon" />
-        <h1>Trader Risk Dashboard</h1>
+
+        <div className="icon-box">
+          <FaChartLine className="header-icon" />
+        </div>
+
+        <div>
+
+          <h1>Trader Risk Dashboard</h1>
+
+          <p className="header-subtitle">
+            Monitor your trading performance, account health and risk exposure
+            in real time.
+          </p>
+
+        </div>
+
       </div>
 
-      <p className="header-subtitle">
-        Monitor your trading performance and risk in real time.
-      </p>
     </header>
   );
 }

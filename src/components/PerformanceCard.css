@@ -1,11 +1,11 @@
 .performance-section {
-  margin-top: 40px;
+  margin-top: 65px;
 }
 
 .performance-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 @media (max-width: 1000px) {
