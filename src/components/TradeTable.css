@@ -1,36 +1,73 @@
 .trade-section {
-  margin-top: 40px;
+  margin-top: 55px;
 }
 
 .table-container {
   overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid #2d3748;
 }
 
 .trade-table {
   width: 100%;
   border-collapse: collapse;
   background: #1e293b;
-  border-radius: 12px;
-  overflow: hidden;
+}
+
+.trade-table thead {
+  background: #334155;
 }
 
 .trade-table th {
-  background: #334155;
-  padding: 16px;
+  padding: 18px;
   text-align: left;
+  color: white;
+  font-size: 15px;
 }
 
 .trade-table td {
-  padding: 16px;
-  border-bottom: 1px solid #334155;
+  padding: 18px;
+  border-bottom: 1px solid #2d3748;
 }
 
-.trade-table tr:last-child td {
-  border-bottom: none;
+.trade-table tbody tr {
+  transition: 0.25s;
 }
 
 .trade-table tbody tr:hover {
-  background: #293548;
+  background: rgba(34,197,94,.08);
+}
+
+.trade-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.position-long {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.position-short {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.result-win {
+  background: rgba(34,197,94,.15);
+  color: #22c55e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.result-loss {
+  background: rgba(239,68,68,.15);
+  color: #ef4444;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .profit-text {
@@ -41,4 +78,25 @@
 .loss-text {
   color: #ef4444;
   font-weight: bold;
+}
+
+.trade-count {
+  background: #22c55e;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.section-subtitle{
+  margin-top:6px;
+  color:#94a3b8;
 }

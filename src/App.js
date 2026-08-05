@@ -7,6 +7,8 @@ import PerformanceCard from "./components/PerformanceCard";
 import RiskIndicator from "./components/RiskIndicator";
 import EquityChart from "./components/EquityChart";
 import TradeTable from "./components/TradeTable";
+import Footer from "./components/Footer";
+import PerformanceByAsset from "./components/PerformanceByAsset";
 
 import {
   startingBalance,
@@ -132,6 +134,10 @@ function App() {
 
       {/* Trade History */}
       <TradeTable trades={trades} />
+
+      {/* Performance by Asset */}
+      <PerformanceByAsset trades={trades} />
+      <Footer />
     </div>
   );
 }

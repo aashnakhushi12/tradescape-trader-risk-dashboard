@@ -1,0 +1,35 @@
+.asset-section{
+    margin-top:60px;
+}
+
+.asset-table{
+    overflow-x:auto;
+    border-radius:16px;
+    border:1px solid #334155;
+}
+
+.asset-table table{
+    width:100%;
+    border-collapse:collapse;
+    background:#1e293b;
+}
+
+.asset-table th{
+    background:#334155;
+    color:white;
+    padding:18px;
+    text-align:left;
+}
+
+.asset-table td{
+    padding:18px;
+    border-bottom:1px solid #334155;
+}
+
+.asset-table tr:last-child td{
+    border-bottom:none;
+}
+
+.asset-table tbody tr:hover{
+    background:#233045;
+}
